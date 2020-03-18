@@ -1,0 +1,83 @@
+---
+title: "Week 9: Creating an R Package"
+output:
+  revealjs::revealjs_presentation:
+    theme: white
+    center: true
+    transition: none
+    incremental: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Creating an R Package
+
+- This demo will create an R package.
+
+- A comprehensive overview (free online book) about creating R packages is available here: [R Packages](http://r-pkgs.had.co.nz)
+
+## R Packages: The What and the Why
+- An R package is a compilation of functions that can be reused and shared.
+
+- The R package can be used internally if you have a set of functions that are regularly used.
+
+- Packages can be hosted in GitHub without requiring the usual process for package approval on CRAN.
+
+
+## Demo Overview:
+
+
+1. Create an R package in R Studio.
+2. Files in an R package
+3. Update documentation
+4. Adding a function
+5. R Oxygen documentation
+6. Update documentation
+7. Build and load package
+8. Use package
+
+## 1. Create a new project as an R package in R Studio.
+
+To create a package, click...
+
+- File... New Project
+- New Directory
+- R Package
+
+
+## 2. Files in an R Package
+There will be a few main folders/files in the R Package:
+
+- DESCRIPTION: This is where all the meta-data about your package goes. 
+- stat408.Rproj: This is an RStudio project file.
+- NAMESPACE: This file indicates what needs to be exposed to users for your R package. 
+- R: This is where all your R code goes for your package.
+- man: this contains the documentation
+
+## 3. Update Documentation
+
+Open the documentation file and include additional information about the package.
+
+## 4. Adding a function
+
+A new function can be created as an R script in the R folder.
+
+## 5. R Oxygen Documentation
+
+Add function documentation using R Oxygen notation. This will create help files for your functions. Here is a good link: [https://kbroman.org/pkg_primer/pages/docs.html](https://kbroman.org/pkg_primer/pages/docs.html)
+
+## 6. Update Documentation
+
+Using the following command `devtools::document()` the documentation for the function is updated. This will update the namespace file and create a .Rd file in the man folder.
+
+## 7. Build and load package
+
+- `devtools::build()`
+- `devtools::install()`
+- `library(stat408)`
+
+## 8. Use package
+
+You can now use the package and access help files for your functions.
